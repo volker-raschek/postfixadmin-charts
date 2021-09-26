@@ -1,0 +1,204 @@
+# Default values for postfixadmin.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+image:
+  repository: docker.io/volkerraschek/postfixadmin
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+config:
+  # POSTFIXADMIN_ADMIN_EMAIL
+  # Define the email address of an admin via POSTFIXADMIN_ADMIN_EMAIL to send
+  # emails or broadcast messages in his name instead of the email address of the
+  # logged in admin, which wants to send an email or broadcast message about the
+  # PostfixAdmin interface.
+  # https://github.com/volker-raschek/postfixadmin-docker#postfixadmin_admin_email
+  # POSTFIXADMIN_ADMIN_EMAIL:
+
+  # POSTFIXADMIN_ADMIN_SMTP_PASSWORD
+  # Define the smtp password via POSTFIXADMIN_ADMIN_SMTP_PASSWORD of the admin
+  # which should be used to send emails or broadcast messages about the
+  # PostfixAdmin interface.
+  # https://github.com/volker-raschek/postfixadmin-docker#postfixadmin_admin_smtp_password
+  # POSTFIXADMIN_ADMIN_SMTP_PASSWORD:
+
+  # POSTFIXADMIN_ADMIN_NAME
+  # Define the name of the admin via POSTFIXADMIN_ADMIN_NAME which should be
+  # used to send emails or broadcast messages about the PostfixAdmin interface.
+  # https://github.com/volker-raschek/postfixadmin-docker#postfixadmin_admin_name
+  # POSTFIXADMIN_ADMIN_NAME:
+
+  # POSTFIXADMIN_DATABASE_TYPE
+  # PostfixAdmin support currently sqlite, postgres and mysql/mariadb. About the
+  # environment variable POSTFIXADMIN_DATABASE_TYPE can the backend type
+  # defined.
+  # https://github.com/volker-raschek/postfixadmin-docker#postfixadmin_database_type
+  # POSTFIXADMIN_DATABASE_TYPE:
+
+  # POSTFIXADMIN_DATABASE_USER
+  # The environment variable POSTFIXADMIN_DATABASE_USER is undefined and only
+  # required if the database backend is not sqlite.
+  # https://github.com/volker-raschek/postfixadmin-docker#postfixadmin_database_user
+  # POSTFIXADMIN_DATABASE_USER:
+
+  # POSTFIXADMIN_DATABASE_PASSWORD
+  # The environment variable POSTFIXADMIN_DATABASE_PASSWORD is undefined and
+  # only required if the database backend is not sqlite.
+  # https://github.com/volker-raschek/postfixadmin-docker#postfixadmin_database_password
+  # POSTFIXADMIN_DATABASE_PASSWORD:
+
+  # POSTFIXADMIN_DATABASE_HOST
+  # The environment variable POSTFIXADMIN_DATABASE_HOST is undefined and only
+  # required if the database backend is not sqlite
+  # https://github.com/volker-raschek/postfixadmin-docker#postfixadmin_database_host
+  # POSTFIXADMIN_DATABASE_HOST:
+
+  # POSTFIXADMIN_DATABASE_PORT
+  # The environment variable POSTFIXADMIN_DATABASE_PORT will automatically
+  # defined with default values when instead of sqlite an other database backend
+  # has been selected.
+  # https://github.com/volker-raschek/postfixadmin-docker#postfixadmin_database_port
+  # POSTFIXADMIN_DATABASE_PORT:
+
+  # POSTFIXADMIN_DATABASE_NAME
+  # The environment variable POSTFIXADMIN_DATABASE_NAME is defined by default
+  # with the value /var/tmp/postfixadmin.db. This is the path where the sqlite
+  # database is stored. If pgsql or mysqli is defined instead of sqlite as
+  # database backend type, can the environment variable used to define the
+  # database name.
+  # https://github.com/volker-raschek/postfixadmin-docker#postfixadmin_database_name
+  # POSTFIXADMIN_DATABASE_NAME:
+
+  # POSTFIXADMIN_DATABASE_USE_SSL
+  # Encrypt a database connection to an external database like postgres, mariadb
+  # or mysqli via SSL when POSTFIXADMIN_DATABASE_USE_SSL=true. Additionally
+  # should be the other SSL environment variables defined to establish
+  # successfully a SSL encrypted connection.
+  # https://github.com/volker-raschek/postfixadmin-docker#postfixadmin_database_use_ssl
+  # POSTFIXADMIN_DATABASE_USE_SSL:
+
+  # POSTFIXADMIN_DATABASE_SSL_KEY
+  # Via POSTFIXADMIN_DATABASE_SSL_KEY can be the path to the private key defined
+  # which should be used to encrypt the database connection via SSL.
+  # https://github.com/volker-raschek/postfixadmin-docker#postfixadmin_database_ssl_key
+  # POSTFIXADMIN_DATABASE_SSL_KEY:
+
+  # POSTFIXADMIN_DATABASE_SSL_CERT
+  # Via POSTFIXADMIN_DATABASE_SSL_CERT can be the path to the certificate
+  # defined which should be used to encrypt the database connection via SSL.
+  # https://github.com/volker-raschek/postfixadmin-docker#postfixadmin_database_ssl_cert
+  # POSTFIXADMIN_DATABASE_SSL_CERT:
+
+  # POSTFIXADMIN_DATABASE_SSL_CA
+  # Via POSTFIXADMIN_DATABASE_SSL_CA can be the path to the root certificate of
+  # the certificate authority defined which should be trusted to encrypt the
+  # database connection via SSL.
+  # https://github.com/volker-raschek/postfixadmin-docker#postfixadmin_database_ssl_ca
+  # POSTFIXADMIN_DATABASE_SSL_CA:
+
+  # POSTFIXADMIN_DATABASE_PREFIX
+  # It make much sense to use a prefix name for all PostfixAdmin related tables,
+  # when the tables, views and so on should be stored into a shared schema like
+  # public. About the environment variable POSTFIXADMIN_DATABASE_PREFIX can such
+  # a prefix defined.
+  # https://github.com/volker-raschek/postfixadmin-docker#postfixadmin_database_prefix
+  # POSTFIXADMIN_DATABASE_PREFIX:
+
+  # POSTFIXADMIN_DEFAULT_LANGUAGE
+  # Default language of PostfixAdmin. Checkout the official repository under
+  # ./languages to get a list of all supported languages.
+  # https://github.com/volker-raschek/postfixadmin-docker#postfixadmin_default_language
+  # POSTFIXADMIN_DEFAULT_LANGUAGE:
+
+  # POSTFIXADMIN_ENCRYPT
+  # Via POSTFIXADMIN_ENCRYPT can be the algorithm specified to encrypt passwords
+  # of users. The algorithm md5crypt is defined as default.
+  # https://github.com/volker-raschek/postfixadmin-docker#postfixadmin_encrypt
+  # POSTFIXADMIN_ENCRYPT:
+
+  # POSTFIXADMIN_SETUP_PASSWORD
+  # To login into the `setup.php` page is the setup password required. If the
+  # setup_password is undefined, it will be set by a random string via helm.
+  # https://github.com/volker-raschek/postfixadmin-docker#postfixadmin_setup_password
+  # POSTFIXADMIN_SETUP_PASSWORD:
+
+  # POSTFIXADMIN_SMTP_SERVER
+  # https://github.com/volker-raschek/postfixadmin-docker#postfixadmin_smtp_server
+  # POSTFIXADMIN_SMTP_SERVER:
+
+  # POSTFIXADMIN_SMTP_PORT
+  # https://github.com/volker-raschek/postfixadmin-docker#postfixadmin_smtp_port
+  # POSTFIXADMIN_SMTP_PORT:
+
+  # POSTFIXADMIN_SHOW_FOOTER_TEXT
+  # Enable or disable via YES or NO the footer text displayed on all sites. Use
+  # POSTFIXADMIN_FOOTER_TEXT and POSTFIX_FOOTER_LINK to customize the text.
+  # https://github.com/volker-raschek/postfixadmin-docker#postfixadmin_show_footer_text
+  # POSTFIXADMIN_SHOW_FOOTER_TEXT:
+  # POSTFIXADMIN_FOOTER_TEXT:
+  # POSTFIXADMIN_FOOTER_LINK:
+
+  # POSTFIXADMIN_FETCHMAIL
+  # Enable or disable via YES or NO the fetchmail tab. It has nothing todo with
+  # the fetchmail cron job.
+  # https://github.com/volker-raschek/postfixadmin-docker#postfixadmin_fetchmail
+  # POSTFIXADMIN_FETCHMAIL:
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  className: "nginx"
+  annotations:
+    # cert-manager.io/cluster-issuer:
+    # cert-manager.io/issuer:
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+  - host: "your-hostname"
+    paths:
+    - path: /
+      pathType: ImplementationSpecific
+  tls:
+  - secretName: "your-tls-secret"
+    hosts:
+    - "your-hostname"
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

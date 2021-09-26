@@ -1,0 +1,20 @@
+apiVersion: v2
+name: postfixadmin
+description: Helm chart for postfixadmin
+type: application
+version: 0.1.0
+appVersion: 3.3.10
+icon: https://a.fsdn.com/allura/p/postfixadmin/icon?1620415130
+
+keywords:
+- postfix
+- postfixadmin
+
+sources:
+- https://github.com/volker-raschek/postfixadmin-charts
+- https://github.com/postfixadmin/postfixadmin
+- https://hub.docker.com/_/postfixadmin
+
+maintainers:
+- name: Markus Pesch
+  email: markus.pesch+apps@cryptic.systems
