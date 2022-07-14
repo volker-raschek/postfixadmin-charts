@@ -27,7 +27,7 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
-config:
+config: {}
   # POSTFIXADMIN_ADMIN_EMAIL
   # Define the email address of an admin via POSTFIXADMIN_ADMIN_EMAIL to send
   # emails or broadcast messages in his name instead of the email address of the
