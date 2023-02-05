@@ -3,7 +3,7 @@ name: postfixadmin
 description: Helm chart for postfixadmin
 type: application
 version: "0.1.1"
-appVersion: "3.3.11"
+appVersion: "3.3.13"
 icon: https://a.fsdn.com/allura/p/postfixadmin/icon?1620415130
 
 keywords:
